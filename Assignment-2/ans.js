@@ -127,8 +127,6 @@ function removeDups(arr) {
 */
 
 
-
-
 /*
 *       Hard
 *       Q-2(D)
@@ -137,9 +135,19 @@ function removeDups(arr) {
 function numInStr(arr) {
     let Arr = [];
     for (var i = 0; i < arr.length; i++) {
-        var x = arr[i];
-        y = x.split('');
-
+        if(checkStringForNumbers(arr[i])){
+            Arr.push(arr[i]);
+        }
     }
     return Arr;
+}
+
+
+function checkStringForNumbers(str) {
+    for (var i = 0; i < str.length; i++) {
+        if (!isNaN(str.charAt(i))) {
+            return true;
+        }
+    }
+    return false;
 }
