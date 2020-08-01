@@ -22,6 +22,7 @@ class App extends React.Component{
      })
   }
 
+
   deleteItem = (id) => {
 
     let newList = this.state.lists.filter( item => item.id !== id);
@@ -37,7 +38,7 @@ class App extends React.Component{
       <div className="App">
         <Navbar heading = "to-do list"/>
         <AddItem addItem={this.addItem}/>
-        <Display lists= {this.state.lists}/>
+        <Display lists= {this.state.lists} deleteItem= {this.deleteItem} />
       </div>
     );
   }

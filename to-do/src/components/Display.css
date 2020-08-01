@@ -19,5 +19,21 @@ nav{
     border-radius: 8px;
     color:#f2f2f2;
     font-size: 35px;
-    padding-left: 20px;
+    padding-left: 30px;
+    margin-top: 0px;
+}
+
+.display-item{
+    background-color:#666;
+    height: 44px;
+    width: 79vw;
+    margin-left: 10vw;
+    border-radius: 8px;
+    border: 1px inset #fff;
+}
+.display-item li{
+    list-style: none;
+    color:#f2f2f2;
+    text-transform: capitalize;
+    font-size: 32px;
 }

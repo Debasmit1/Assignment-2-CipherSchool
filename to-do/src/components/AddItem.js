@@ -4,7 +4,8 @@ import './Display.css'
 class AddItem extends React.Component{
 
     state= {
-        text: ''
+        text: '',
+        id: null
     }
 
     handleChange = (event) => {
@@ -16,14 +17,16 @@ class AddItem extends React.Component{
 
     handleSubmit = (event) => {
         event.preventDefault();
-
         this.props.addItem(this.state);
+        this.setState({
+            text: ''
+        })
     }
 
     render(){
         return(
             <form className="form-element" onSubmit={this.handleSubmit}>
-                <input type="text" placeholder="Add Todo" onChange={this.handleChange} className="waiting" value={this.state.text} />
+                <input type="text" placeholder="Add an Item" onChange={this.handleChange} className="waiting" value={this.state.text} />
             </form>
         )
     }

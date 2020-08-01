@@ -1,26 +1,33 @@
 import React from 'react';
 import './Display.css';
 
-const Display = ({ lists}) => {
+const Display = ({ lists,deleteItem}) => {
 
 
-    const itemList =  lists.map(course => {
-        let {text,id} = course;
-        return (
-            <ul key={id}>
+
+    if(lists.text !== ''){
+
+        var itemList = lists.map(course => {
+            let { text, id } = course;
+            return (
+                <ol className='display-item' key={id} onClick={() => { deleteItem(id) }}>
                     <li>
                         {text}
                     </li>
 
-            </ul>
-        )
-    })
+                </ol>
+            )
+        })
+    }else{
+        alert('Enter a item');
+    }
+
 
 
 
     return (
-        <div className='display-item'>
-            {itemList}
+        <div>
+           {itemList}
         </div>
     )
 };
